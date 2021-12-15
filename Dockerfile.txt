@@ -1,13 +1,5 @@
-FROM python:3.9-slim-bullseye
+FROM python:3.10
+COPY PetstoreSwagger_Python.py /PetstoreSwagger_Python.py
+RUN chmod +x /PetstoreSwagger_Python.py
+CMD python /PetstoreSwagger_Python.py
 
-ENV VIRTUAL_ENV=/opt/venv
-RUN python3 -m venv $VIRTUAL_ENV
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
-
-# Install dependencies:
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-
-# Run the application:
-COPY PetstoreAPI_PythonTests.py .
-CMD ["python", "PetstoreAPI_PythonTests.py"]
