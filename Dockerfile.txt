@@ -1,5 +1,8 @@
-FROM python:3.10
-COPY PetstoreSwagger_Python.py /PetstoreSwagger_Python.py
-RUN chmod +x /PetstoreSwagger_Python.py
-CMD python /PetstoreSwagger_Python.py
-
+FROM jenkins/jenkins
+USER root
+RUN mkdir /my_app
+WORKDIR /my_app
+RUN pwd
+RUN ls -la
+RUN apt-get update
+RUN apt-get install -y python3-pip
