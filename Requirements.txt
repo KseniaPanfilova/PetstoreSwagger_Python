@@ -1,6 +1,0 @@
-requests
-unittest
-son
-faker
-random
-time
